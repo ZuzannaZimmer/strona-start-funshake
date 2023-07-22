@@ -45,12 +45,18 @@
 
             // Pobierz wartość z pola input
             const textInput = document.getElementById("text-input").value;
+            const timestamp = Date.now().toLocaleString();
 
             // Uzyskaj dostęp do referencji do bazy danych
             const databaseRef = firebase.database().ref();
 
             // Dodaj wprowadzony tekst do bazy danych
-            databaseRef.push().set({ text: textInput })
+            databaseRef.push().set(
+                {
+                 text: textInput,
+                 timestamp: timestamp
+                }
+                 )
                 .then(() => {
                     console.log("Tekst został zapisany do bazy danych Firebase.");
                 })

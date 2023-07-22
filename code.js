@@ -19,7 +19,7 @@ function checkCode() {
         if (matchingResult.endsWith(".html")) {
           window.location.href = matchingResult;
         } else {
-          // Jeśli wynik nie ma formy .html, przekieruj na stronę "results.html" z przekazywanymi parametrami
+          // Jeśli wynik nie ma formy sa.html, przekieruj na stronę "results.html" z przekazywanymi parametrami
           var resultArray = Array.isArray(matchingResult) ? matchingResult : [matchingResult];
 
           var images = [];
