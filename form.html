@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+
+    <!-- Skrypty Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <form onsubmit="saveToFirebase(event)">
+                <h1 class="rainbow-text">WPISZ<br>IMIĘ I NAZWISKO</h1>
+                <div class="box">
+                    <input type="text" id="text-input" required />
+                </div>
+                <button type="submit">wyślij</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Skonfiguruj swój obiekt z danymi dostępu do Firebase
+        const firebaseConfig = {
+        apiKey: "AIzaSyCTFkvdd2xrGByru0k-Hi-KdBlMuxUBSko",
+        authDomain: "fun-shake.firebaseapp.com",
+        databaseURL: "https://fun-shake-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "fun-shake",
+        storageBucket: "fun-shake.appspot.com",
+        messagingSenderId: "334182501367",
+        appId: "1:334182501367:web:f49e8f4656c17e64d97cf2",
+    };
+
+        // Inicjuj Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Funkcja do zapisywania danych do bazy Firebase
+        function saveToFirebase(event) {
+            event.preventDefault();
+
+            // Pobierz wartość z pola input
+            const textInput = document.getElementById("text-input").value;
+
+            // Uzyskaj dostęp do referencji do bazy danych
+            const databaseRef = firebase.database().ref();
+
+            // Dodaj wprowadzony tekst do bazy danych
+            databaseRef.push().set({ text: textInput })
+                .then(() => {
+                    console.log("Tekst został zapisany do bazy danych Firebase.");
+                })
+                .catch((error) => {
+                    console.error("Wystąpił błąd podczas zapisywania do bazy danych Firebase:", error);
+                });
+        }
+    </script>
+</body>
+</html>
+

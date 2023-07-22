@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Losowanie z listy</title>
+    <link rel="stylesheet" href="form.css">
+
+    <!-- Skrypty Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <form onsubmit="submitForm(event)">
+                <h1 class="rainbow-text">WPISZ<br>IMIĘ I NAZWISKO<br> ABY WYLOSOWAĆ</h1>
+                <div class="box">
+                    <input type="text" id="name-input" required placeholder="Imię i nazwisko" />
+                </div>
+                <button type="submit">wyślij</button>
+            </form>
+            <p id="wynik">Wylosowany element: </p>
+        </div>
+    </div>
+
+    <script>
+        // Skonfiguruj swój obiekt z danymi dostępu do Firebase
+        const firebaseConfig = {
+        apiKey: "AIzaSyCTFkvdd2xrGByru0k-Hi-KdBlMuxUBSko",
+        authDomain: "fun-shake.firebaseapp.com",
+        databaseURL: "https://fun-shake-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "fun-shake",
+        storageBucket: "fun-shake.appspot.com",
+        messagingSenderId: "334182501367",
+        appId: "1:334182501367:web:f49e8f4656c17e64d97cf2",
+    };
+
+
+        // Inicjuj Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Funkcja do zapisywania danych do bazy Firebase
+        function saveToFirebase(data) {
+            // Uzyskaj dostęp do referencji do bazy danych
+            const databaseRef = firebase.database().ref();
+
+            // Dodaj dane do bazy danych
+            databaseRef.push().set(data)
+                .then(() => {
+                    console.log("Dane zostały zapisane do bazy danych Firebase.");
+                })
+                .catch((error) => {
+                    console.error("Wystąpił błąd podczas zapisywania do bazy danych Firebase:", error);
+                });
+        }
+
+        // Funkcja wywoływana po przesłaniu formularza
+        function submitForm(event) {
+            event.preventDefault();
+
+            // Pobierz wartość z pola input
+            const nameInput = document.getElementById("name-input").value;
+
+            // Wylosuj element i przekaż dane do bazy danych Firebase
+            losujElement(nameInput);
+        }
+
+        // Funkcja do losowania elementu i przekazywania danych do bazy danych Firebase
+        function losujElement(nameInput) {
+            // Pobierz listę za pomocą zapytania AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "lista.json", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        var lista = JSON.parse(xhr.responseText);
+
+                        // Losowanie indeksu z listy
+                        var losowyIndeks = Math.floor(Math.random() * lista.length);
+
+                        // Pobieranie wylosowanego elementu
+                        var wylosowanyElement = lista[losowyIndeks];
+
+                        // Wyświetlenie wyniku
+                        document.getElementById("wynik").innerText = "Wylosowany element: " + wylosowanyElement;
+
+                        // Przygotuj dane do przekazania do Firebase
+                        var dataToSave = {
+                            name: nameInput,
+                            randomElement: wylosowanyElement
+                        };
+
+                        // Przekazanie danych do Firebase
+                        saveToFirebase(dataToSave);
+                    } else {
+                        console.error("Błąd podczas pobierania listy.");
+                    }
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

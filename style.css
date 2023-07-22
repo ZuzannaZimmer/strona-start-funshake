@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+ body {
+    background-image: url('tlo.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+  }
+
+h1 {
+  font-size: 25px;
+  background: linear-gradient(to right, #ee4b8a, #f56a5b, #2f6eec);
+			-webkit-text-fill-color: transparent;
+			-webkit-background-clip: text;
+
+  font-family: 'Poppins', sans-serif;
+  
+}
+ 
+.container {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+.container h1, .container input, .container button {
+    margin: 3px;
+  }
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(45deg, #2196f3, #ff4685); */       /*tło gradient*/
+
+}
+
+.form {
+  position: relative;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.288);
+  /* color: #fff; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  align-items: center;
+}
+
+.input-box {
+  position: relative;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.input-box input {
+  position: relative;
+  padding: 3px 5px;
+  width: 100%;
+  width: 150px;
+  text-align: center; 
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  background: linear-gradient(45deg, #ee4b8a, #ff8e82, #6a9cfd);
+  color: #ffff;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.input-box input::placeholder {
+  color: #ffffffa4;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.05rem;
+  text-align: center;
+  
+
+}
+
+button {
+  border: none;
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  color: #ffff;
+  cursor: pointer;
+
+}
+
+.mycontainer p {
+  text-align: center;
+}
