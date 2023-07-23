@@ -17,7 +17,7 @@
             <form onsubmit="submitForm(event)">
                 <h1 class="rainbow-text">WPISZ<br>IMIĘ I NAZWISKO<br> ABY WYLOSOWAĆ</h1>
                 <div class="box">
-                    <input type="text" id="name-input" required placeholder="Imię i nazwisko" />
+                    <input type="text" id="text-input" required/>
                 </div>
                 <button type="submit">wyślij</button>
             </form>
@@ -61,7 +61,7 @@
             event.preventDefault();
 
             // Pobierz wartość z pola input
-            const nameInput = document.getElementById("name-input").value;
+            const nameInput = document.getElementById("text-input").value;
 
             // Wylosuj element i przekaż dane do bazy danych Firebase
             losujElement(nameInput);
@@ -84,7 +84,7 @@
                         var wylosowanyElement = lista[losowyIndeks];
 
                         // Wyświetlenie wyniku
-                        document.getElementById("wynik").innerText = "Wylosowany element: " + wylosowanyElement;
+                        document.getElementById("wynik").innerText = "Wylosowany element: \n" + wylosowanyElement;
 
                         // Przygotuj dane do przekazania do Firebase
                         var dataToSave = {
