@@ -51,8 +51,10 @@ function checkCode() {
                 }
             } else {
                 // Pokazujemy tekst błędu "cocococococco"
+                const answers = ["Lorem ipsum dolor sit amet", "Ut enim ad minim veniam", "Duis aute irure dolor in reprehenderit", "Excepteur sint occaecat cupidatat"]
+                const randomAnswer = answers[Math.floor(Math.random()*answers.length)]
                 var chat = document.getElementById("chat");
-                chat.innerHTML = '<p style="text-align: right; margin-bottom: 7px; color: #BFE3D6;">cocococococco</p>' + chat.innerHTML;
+                chat.innerHTML = '<p style="text-align: right; margin-bottom: 7px; color: #BFE3D6;">' + randomAnswer + '</p>' + chat.innerHTML;
                 chat.innerHTML = '<p style="text-align: left; margin-bottom: 5px; color: #3a3a3a;">' + enteredCode + '</p>' + chat.innerHTML;
             }
         },
