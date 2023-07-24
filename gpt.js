@@ -44,16 +44,16 @@ function checkCode() {
                     }
 
                     if (queryParams !== "") {
-                        window.location.href = "results.html?" + queryParams.slice(0, -1);
+                        window.location.href = "result-gpt.html?" + queryParams.slice(0, -1);
                     } else {
-                        window.location.href = "results.html?text=" + encodeURIComponent(matchingResult);
+                        window.location.href = "result-gpt.html?text=" + encodeURIComponent(matchingResult);
                     }
                 }
             } else {
                 // Pokazujemy tekst błędu "cocococococco"
                 var chat = document.getElementById("chat");
-                chat.innerHTML = '<p style="text-align: left; margin-bottom: 10px; color: red;">cocococococco</p>' + chat.innerHTML;
-                chat.innerHTML = '<p style="text-align: right; margin-bottom: 5px; color: #3a3a3a;">' + enteredCode + '</p>' + chat.innerHTML;
+                chat.innerHTML = '<p style="text-align: right; margin-bottom: 7px; color: #BFE3D6;">cocococococco</p>' + chat.innerHTML;
+                chat.innerHTML = '<p style="text-align: left; margin-bottom: 5px; color: #3a3a3a;">' + enteredCode + '</p>' + chat.innerHTML;
             }
         },
         error: function(xhr, status, error) {
