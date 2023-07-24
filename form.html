@@ -45,8 +45,8 @@
 
             // Pobierz wartość z pola input
             const textInput = document.getElementById("text-input").value;
-            const timestamp = new Date().toUTCString();
-
+            const timestamp = new Date().toLocaleString();
+            console.log(timestamp)
             // Uzyskaj dostęp do referencji do bazy danych
             const databaseRef = firebase.database().ref();
 
