@@ -53,9 +53,19 @@ function checkCode() {
                 // Pokazujemy tekst błędu "cocococococco"
                 const answers = ["Lorem ipsum dolor sit amet", "Ut enim ad minim veniam", "Duis aute irure dolor in reprehenderit", "Excepteur sint occaecat cupidatat"]
                 const randomAnswer = answers[Math.floor(Math.random()*answers.length)]
-                var chat = document.getElementById("chat");
-                chat.innerHTML = '<p style="text-align: right; margin-bottom: 7px; color: #BFE3D6;">' + randomAnswer + '</p>' + chat.innerHTML;
-                chat.innerHTML = '<p style="text-align: left; margin-bottom: 5px; color: #FFFFFF;">' + enteredCode + '</p>' + chat.innerHTML;
+                document.getElementById('loader').style.display = 'block'
+                document.getElementById('myBtn').style.display = 'none'
+                setTimeout(function() { 
+                    document.getElementById('loader').style.display = 'none'
+                    document.getElementById('myBtn').style.display = 'block'
+                    var chat = document.getElementById("chat");
+                    chat.innerHTML = '<p style="text-align: right; margin-bottom: 7px; color: #BFE3D6;">' + randomAnswer + '</p>' + chat.innerHTML;
+                    chat.innerHTML = '<p style="text-align: left; margin-bottom: 5px; color: #FFFFFF;">' + enteredCode + '</p>' + chat.innerHTML;
+           
+                }, 1000)
+                // var chat = document.getElementById("chat");
+                // chat.innerHTML = '<p style="text-align: right; margin-bottom: 7px; color: #BFE3D6;">' + randomAnswer + '</p>' + chat.innerHTML;
+                // chat.innerHTML = '<p style="text-align: left; margin-bottom: 5px; color: #FFFFFF;">' + enteredCode + '</p>' + chat.innerHTML;
             }
         },
         error: function(xhr, status, error) {
