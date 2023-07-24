@@ -55,7 +55,7 @@ function checkCode() {
                 const randomAnswer = answers[Math.floor(Math.random()*answers.length)]
                 var chat = document.getElementById("chat");
                 chat.innerHTML = '<p style="text-align: right; margin-bottom: 7px; color: #BFE3D6;">' + randomAnswer + '</p>' + chat.innerHTML;
-                chat.innerHTML = '<p style="text-align: left; margin-bottom: 5px; color: #3a3a3a;">' + enteredCode + '</p>' + chat.innerHTML;
+                chat.innerHTML = '<p style="text-align: left; margin-bottom: 5px; color: #FFFFFF;">' + enteredCode + '</p>' + chat.innerHTML;
             }
         },
         error: function(xhr, status, error) {
