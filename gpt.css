@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+body {
+    background-image: url('gpt-tlo.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+}
+
+h1 {
+    font-size: 25px;
+    background: white;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container h1, .container input, .container button {
+    margin: 0px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    position: relative;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.288);
+    /* color: #fff; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    align-items: center;
+}
+
+.input-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 190px;
+    border: 1px solid rgba(32, 33, 35, .5);
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.input-box input {
+    padding: 3px 5px;
+    width: 100%;
+    /* text-align: center; */
+    border: none;
+    outline: none;
+    background: #40414F;
+    color: #ffff;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.input-box input::placeholder {
+    color: #ffffffa4;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.05rem;
+    /* text-align: center; */
+}
+
+.input-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #40414F;
+}
+
+button {
+  border: none;
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  color: #6b6c7b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+button svg {
+  margin-right: 5px; /* Przesunięcie ikony o 5 pikseli w prawo */
+}
+
+#chat{
+  color: white;
+}
