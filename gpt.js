@@ -51,7 +51,16 @@ function checkCode() {
                 }
             } else {
                 
-                const answers = ["Lorem ipsum dolor sit amet", "Ut enim ad minim veniam", "Duis aute irure dolor in reprehenderit", "Excepteur sint occaecat cupidatat"]
+                const answers = [
+                    "Spróbuj ponownie.", 
+                    "Nie mam na to odpowiedzi.", 
+                    "Nie rozumiem, o co chodzi?", 
+                    "Przepraszam, nie zrozumiałem.",
+                    "Ty do mnie to mówisz?",
+                    "No hablo Polaco.",
+                    "Nie usłyszałem, powtórz.",
+                    "Tego to nikt nie wie."
+                ]
                 const randomAnswer = answers[Math.floor(Math.random()*answers.length)]
                 document.getElementById('loader').style.display = 'block'
                 document.getElementById('myBtn').style.display = 'none'
@@ -59,14 +68,10 @@ function checkCode() {
                     document.getElementById('loader').style.display = 'none'
                     document.getElementById('myBtn').style.display = 'block'
                     var chat = document.getElementById("chat");
-                    chat.innerHTML = '<p style="text-align: right; margin-bottom: 7px; color: #BFE3D6;">' + randomAnswer + '</p>' + chat.innerHTML;
-                    chat.innerHTML = '<p style="text-align: left; margin-bottom: 5px; color: #FFFFFF;">' + enteredCode + '</p>' + chat.innerHTML;
-           
+                    chat.innerHTML = chat.innerHTML + '<p style="text-align: left; margin-bottom: 5px; color: #FFFFFF;">' + enteredCode + '</p>';
+                    chat.innerHTML = chat.innerHTML + '<p style="text-align: right; margin-bottom: 7px; color: #BFE3D6;">' + randomAnswer + '</p>';
                 }, 1000)
-                // var chat = document.getElementById("chat");
-                // chat.innerHTML = '<p style="text-align: right; margin-bottom: 7px; color: #BFE3D6;">' + randomAnswer + '</p>' + chat.innerHTML;
-                // chat.innerHTML = '<p style="text-align: left; margin-bottom: 5px; color: #FFFFFF;">' + enteredCode + '</p>' + chat.innerHTML;
-            }
+              }
         },
         error: function(xhr, status, error) {
             console.error('Błąd podczas wczytywania pliku JSON:', error);

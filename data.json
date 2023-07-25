@@ -1,10 +1,74 @@
 [
     {
-        "code": "85056",
-        "result": "KONIEC CZASU"
+        "code": "Podobam Ci się?",
+        "result": "zagadka1.jpg"
     },
     {
-        "code": "94715",
-        "result": "KONIEC CZASU"
+        "code": "Co zrobić jak brzydko pachnę?",
+        "result": "zagadka2.jpg"
+    },
+    {
+        "code": "Gdzie mogę posiedzieć?",
+        "result": "zagadka3.jpg"
+    },
+    {
+        "code": "Czy na starcie jest tylko siata?",
+        "result": "zagadka4.jpg"
+    },
+    {
+        "code": "Co to jest siatstart?",
+        "result": "zagadka5.jpg"
+    },
+    {
+        "code": "Ej, gdzie to jest?",
+        "result": "zagadka6.jpg"
+    },
+    {
+        "code": "Ziuuuum",
+        "result": "zagadka7.jpg"
+    },
+    {
+        "code": "Gdzie zrobię dzienną porcję kroków?",
+        "result": "zagadka8.jpg"
+    },
+    {
+        "code": "Mniam mniam",
+        "result": "zagadka9.jpg"
+    },
+    {
+        "code": "Czy na starcie można dać komuś kosza?",
+        "result": "zagadka10.jpg"
+    },
+    {
+        "code": "Co to znaczy chillować bombę?",
+        "result": "zagadka11.jpg"
+    },
+    {
+        "code": "Gdzie jest ta sala B?",
+        "result": "zagadka12.jpg"
+    },
+    {
+        "code": "Czy na starcie można mieć balkon?",
+        "result": "zagadka13.jpg"
+    },
+    {
+        "code": "Czy uda mi się uciec z pokoju?",
+        "result": "zagadka14.jpg"
+    },
+    {
+        "code": "Gdzie jest Estera?",
+        "result": "zagadka15.jpg"
+    },
+    {
+        "code": "Gdzie napiję się wody?",
+        "result": "zagadka16.jpg"
+    },
+    {
+        "code": "Najlepsze miejsce na czas w grupach?",
+        "result": "zagadka17.jpg"
+    },
+    {
+        "code": "Ej, gramy dziś?",
+        "result": "zagadka18.jpg"
     }
 ]
