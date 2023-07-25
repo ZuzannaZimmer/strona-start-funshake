@@ -50,7 +50,7 @@ function checkCode() {
                     }
                 }
             } else {
-                // Pokazujemy tekst błędu "cocococococco"
+                
                 const answers = ["Lorem ipsum dolor sit amet", "Ut enim ad minim veniam", "Duis aute irure dolor in reprehenderit", "Excepteur sint occaecat cupidatat"]
                 const randomAnswer = answers[Math.floor(Math.random()*answers.length)]
                 document.getElementById('loader').style.display = 'block'
@@ -73,33 +73,6 @@ function checkCode() {
         }
     });
 }
-
-// Cyklicznie sprawdzamy poprawność kodu
-setInterval(function() {
-    var enteredCode = document.getElementById("codeInput").value;
-    $.ajax({
-        success: function(data) {
-
-            if (matchingResult) {
-                // Poprawny kod - ukrywamy komunikat błędu
-                var errorText = document.getElementById("chat").firstElementChild;
-                if (errorText.innerText === "cocococococco") {
-                    errorText.style.display = "none";
-                }
-            } else {
-                // Błędny kod - wyświetlamy komunikat błędu
-                var errorText = document.getElementById("chat").firstElementChild;
-                if (errorText.innerText !== "cocococococco") {
-                    var chat = document.getElementById("chat");
-                    chat.innerHTML = '<p style="text-align: right; margin-bottom: 10px; color: white;">cocococococco</p>' + chat.innerHTML;
-                }
-            }
-        },
-        error: function(xhr, status, error) {
-            console.error('Błąd podczas wczytywania pliku JSON:', error);
-        }
-    });
-}, 1000); // Sprawdzamy co 1 sekundę
 
 var input = document.getElementById("codeInput");
 input.addEventListener("keypress", function(event) {

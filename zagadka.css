@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+ body {
+    background-image: url('tlo.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+  }
+
+button {
+    border: none;
+    background-color: #BE94B8;
+    font-family: 'Poppins', sans-serif;
+    color:#FFFFFF; 
+    cursor: pointer;
+    width: 200px;
+    border-radius: 1rem;
+    font-size: 10px;
+    margin-top: 5px;
+
+}
+h1{
+    font-size: 13px;
+    color: #FFFFFF;
+    text-align: center;
+  }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    margin-top: 130px;
+  }
