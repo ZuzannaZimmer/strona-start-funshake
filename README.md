@@ -16,4 +16,5 @@ There is also another version here which looks more like chatgpt, but works the 
 
 ## Link
 
-[webside link](fun-shake.web.app)
+[main webside link](fun-shake.web.app)
+[gpt version webside link](https://fun-shake.web.app/gpt.html)
